@@ -1,1 +1,211 @@
-[]
+[
+    {
+        "id": "a413c5de.eff2d8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "81478f64.4f3cb",
+        "type": "telegram bot",
+        "botname": "blabla_nodered_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "1000",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "627d079c.df8018",
+        "type": "telegrambot-config",
+        "botname": "blabla_nodered_bot",
+        "usernames": "",
+        "chatIds": "",
+        "pollInterval": "300"
+    },
+    {
+        "id": "5e86036e.d2eadc",
+        "type": "inject",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "519acc7a.fe2634"
+            ]
+        ]
+    },
+    {
+        "id": "5b2a4d59.fb0cd4",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "519acc7a.fe2634",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1596568169:AAGqVIq2JJca4iTE0HWykp7-DchrxncUB2E/setWebhook?url=https://56b9e7488901.ngrok.io/blablabot",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "5b2a4d59.fb0cd4"
+            ]
+        ]
+    },
+    {
+        "id": "fe21fe38.121c9",
+        "type": "http in",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "url": "/blablabot",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "7f4cfafb.abf044",
+                "dc3f4632.3aabc8",
+                "35505cbd.6300c4"
+            ]
+        ]
+    },
+    {
+        "id": "35505cbd.6300c4",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.payload = {\n\n  text: 'Drink water',\n\n  chat_id: msg.payload.message.from.id,\n\n  }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "e21653c1.1fe95"
+            ]
+        ]
+    },
+    {
+        "id": "e21653c1.1fe95",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1596568169:AAGqVIq2JJca4iTE0HWykp7-DchrxncUB2E/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "b8a1cedb.296a7"
+            ]
+        ]
+    },
+    {
+        "id": "b8a1cedb.296a7",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7f4cfafb.abf044",
+        "type": "http response",
+        "z": "a413c5de.eff2d8",
+        "name": "http 200",
+        "statusCode": "",
+        "headers": {},
+        "x": 240,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "dc3f4632.3aabc8",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 440,
+        "wires": []
+    }
+]
