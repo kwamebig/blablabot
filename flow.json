@@ -7,38 +7,6 @@
         "info": ""
     },
     {
-        "id": "81478f64.4f3cb",
-        "type": "telegram bot",
-        "botname": "blabla_nodered_bot",
-        "usernames": "",
-        "chatids": "",
-        "baseapiurl": "",
-        "updatemode": "polling",
-        "pollinterval": "1000",
-        "usesocks": false,
-        "sockshost": "",
-        "socksport": "6667",
-        "socksusername": "anonymous",
-        "sockspassword": "",
-        "bothost": "",
-        "botpath": "",
-        "localbotport": "8443",
-        "publicbotport": "8443",
-        "privatekey": "",
-        "certificate": "",
-        "useselfsignedcertificate": false,
-        "sslterminated": false,
-        "verboselogging": false
-    },
-    {
-        "id": "627d079c.df8018",
-        "type": "telegrambot-config",
-        "botname": "blabla_nodered_bot",
-        "usernames": "",
-        "chatIds": "",
-        "pollInterval": "300"
-    },
-    {
         "id": "5e86036e.d2eadc",
         "type": "inject",
         "z": "a413c5de.eff2d8",
@@ -92,7 +60,7 @@
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "https://api.telegram.org/bot1596568169:AAGqVIq2JJca4iTE0HWykp7-DchrxncUB2E/setWebhook?url=https://56b9e7488901.ngrok.io/blablabot",
+        "url": "https://api.telegram.org/bot1596568169:AAGqVIq2JJca4iTE0HWykp7-DchrxncUB2E/setWebhook?url=https://b1e6588a97b6.ngrok.io/blablabot",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -129,7 +97,7 @@
         "type": "function",
         "z": "a413c5de.eff2d8",
         "name": "",
-        "func": "msg.payload = {\n\n  text: 'Drink water',\n\n  chat_id: msg.payload.message.from.id,\n\n  }\nreturn msg;",
+        "func": "msg.payload = {\n\n  text: 'Bla bla',\n\n  chat_id: msg.payload.message.from.id,\n\n  }\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -156,36 +124,19 @@
         "proxy": "",
         "authType": "basic",
         "x": 750,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
-                "b8a1cedb.296a7"
+                "bb1a43ff.05786"
             ]
         ]
-    },
-    {
-        "id": "b8a1cedb.296a7",
-        "type": "debug",
-        "z": "a413c5de.eff2d8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "7f4cfafb.abf044",
         "type": "http response",
         "z": "a413c5de.eff2d8",
-        "name": "http 200",
-        "statusCode": "",
+        "name": "",
+        "statusCode": "200",
         "headers": {},
         "x": 240,
         "y": 440,
@@ -206,6 +157,22 @@
         "statusType": "auto",
         "x": 430,
         "y": 440,
+        "wires": []
+    },
+    {
+        "id": "bb1a43ff.05786",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 280,
         "wires": []
     }
 ]
