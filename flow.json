@@ -97,7 +97,7 @@
         "type": "function",
         "z": "a413c5de.eff2d8",
         "name": "",
-        "func": "msg.payload = {\n\n  text: 'Bla bla bla',\n\n  chat_id: msg.payload.message.from.id,\n\n  }\nreturn msg;",
+        "func": "msg.payload = {\n\n  text: 'Bla bla',\n\n  chat_id: msg.payload.message.from.id,\n\n  }\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
